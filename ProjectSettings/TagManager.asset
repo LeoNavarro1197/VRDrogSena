@@ -17,6 +17,8 @@ TagManager:
   - AudioProveedorCorrecto
   - AudioProveedorIncorrecto
   - EntradaPuerta
+  - CajaAdvil
+  - Bandeja
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class ControlGameplay : MonoBehaviour
 {
     public AlphaNumerico alphaNumerico;
     public GameObject Agent;
+    public bool agent1 = false, agent2 = false, agent3 = false, agent4 = false, agent5 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,16 @@ public class ControlGameplay : MonoBehaviour
 
     void InstanciarAgente()
     {
-        Agent.SetActive(true);
+        int numeroAgente = Random.Range(1, 1);
+
+        if(numeroAgente == 1)
+        {
+            Agent.SetActive(true);
+            agent1 = true;
+        }
+        /*else if(numeroAgente == 2)
+        {
+
+        }*/
     }
 }
