@@ -187,10 +187,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: tomar
+    m_ConditionEvent: idle
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: idle
+    m_ConditionEvent: tomar
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8022461466773146405}
