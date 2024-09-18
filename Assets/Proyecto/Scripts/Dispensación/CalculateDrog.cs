@@ -9,8 +9,6 @@ public class CalculateDrog : MonoBehaviour
 
     public Animator animator;
 
-    bool bandera = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,56 +18,27 @@ public class CalculateDrog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bandera)
-        {
-            
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (controlGameplay.agent1 && other.CompareTag("CajaAdvil"))
         {
-            Debug.Log("Entró Advil, activando animación tomar...");
-
-            animator.Play("tomar", 0, 0);
-            animator.SetBool("idle", false); // Asegúrate de desactivar 'idle'
-            bandera = true;
-
-            // Espera un frame antes de verificar la animación
-            StartCoroutine(CheckAnimationEnd());
+            Debug.Log("Entró Advil");
+            animator.SetBool("tomar", true);
+            animator.SetBool("idle", false);
+            Invoke("StartIdle", 1.10f);
         }
         else
         {
-            Debug.Log("Colisión con objeto incorrecto.");
+            Debug.Log("Medicamento incorrecto");
         }
     }
 
-    private IEnumerator CheckAnimationEnd()
+    void StartIdle()
     {
-        yield return null; // Espera un frame para asegurarte de que la animación 'tomar' comience
-
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0); // Capa base
-
-        Debug.Log("Verificando estado de animación en la capa 0.");
-
-        if (stateInfo.IsName("tomar"))
-        {
-            Debug.Log("La animación 'tomar' está corriendo.");
-
-            // Verifica si la animación ha terminado
-            if (stateInfo.normalizedTime >= 1.0f)
-            {
-                Debug.Log("Animación 'tomar' finalizada.");
-            }
-            else
-            {
-                Debug.Log("Animación 'tomar' aún en progreso. Tiempo normalizado: " + stateInfo.normalizedTime);
-            }
-        }
-        else
-        {
-            Debug.Log("La animación 'tomar' no está activa.");
-        }
+        animator.SetBool("idle", true);
+        animator.SetBool("tomar", false);
     }
 }

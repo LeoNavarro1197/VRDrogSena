@@ -19,6 +19,7 @@ TagManager:
   - EntradaPuerta
   - CajaAdvil
   - Bandeja
+  - PointClient1
   layers:
   - Default
   - TransparentFX
