@@ -67,13 +67,7 @@ public class AlphaNumerico : MonoBehaviour
             panelCongrats.SetActive(true);
             panelFormula.SetActive(false);
             calculateCAP.ejercicioCorrecto = false;
-            Invoke("OffPanelCongrats", 3f);
             initNewState = true;
         }
-    }
-
-    void OffPanelCongrats()
-    {
-        panelCongrats.SetActive(false);
     }
 }

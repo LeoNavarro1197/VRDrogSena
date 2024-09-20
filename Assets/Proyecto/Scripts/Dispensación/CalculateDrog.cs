@@ -9,6 +9,13 @@ public class CalculateDrog : MonoBehaviour
 
     public Animator animator;
 
+    public bool activarCaminandoAfuera = false;
+
+    public GameObject advil;
+    public GameObject notidicacionAlmacenamiento;
+
+    public GameObject inicioAlmacenamiento, UIFormula;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +35,7 @@ public class CalculateDrog : MonoBehaviour
             Debug.Log("Entró Advil");
             animator.SetBool("tomar", true);
             animator.SetBool("idle", false);
+            Invoke("DesaparecerObjeto", 1.08f);
             Invoke("StartIdle", 1.10f);
         }
         else
@@ -36,9 +44,31 @@ public class CalculateDrog : MonoBehaviour
         }
     }
 
+    void DesaparecerObjeto()
+    {
+        advil.SetActive(false);
+    }
+
     void StartIdle()
     {
         animator.SetBool("idle", true);
         animator.SetBool("tomar", false);
+        Invoke("StartCaminando", 1);
+    }
+
+    void StartCaminando()
+    {
+        animator.SetBool("caminando", true);
+        animator.SetBool("idle", false);
+        activarCaminandoAfuera = true;
+        notidicacionAlmacenamiento.SetActive(true);
+        Invoke("DesaparecerNotificacionAlmacenamiento", 2);
+    }
+
+    void DesaparecerNotificacionAlmacenamiento()
+    {
+        UIFormula.SetActive(false);
+        inicioAlmacenamiento.SetActive(true);
+        notidicacionAlmacenamiento.SetActive(false);
     }
 }

@@ -20,6 +20,16 @@ TagManager:
   - CajaAdvil
   - Bandeja
   - PointClient1
+  - CajaTremal
+  - CajaNuxpirin
+  - CajaCequam
+  - CajaEutirox
+  - CajaAlbendazul
+  - CajaLantus
+  - CajaTramadol
+  - CajaPlatemax
+  - CajaHumalug
+  - CajaTresiba
   layers:
   - Default
   - TransparentFX

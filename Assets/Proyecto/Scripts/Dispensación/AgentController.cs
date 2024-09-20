@@ -11,6 +11,10 @@ public class AgentController : MonoBehaviour
     public AudioSource audioSource;
     public GameObject UIFormula;
 
+    public CalculateDrog calculateDrog;
+
+    public GameObject notificacionCliente;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +30,14 @@ public class AgentController : MonoBehaviour
             controller.SetBool("idle", false);
         }
 
-        agent.destination = point.position;
-        
+        if (calculateDrog.activarCaminandoAfuera)
+        {
+            agent.destination = new Vector3(-7, 0, 6);
+        }
+        else
+        {
+            agent.destination = point.position;
+        }
         /*if((agent.transform.position.x == point.position.x) && (agent.transform.position.z == point.position.z) && bandera) 
         {
             
@@ -43,6 +53,8 @@ public class AgentController : MonoBehaviour
         if (other.CompareTag("EntradaPuerta"))
         {
             audioSource.Play();
+            notificacionCliente.SetActive(true);
+            Invoke("DesaparecerNotificacionCliente", 7);
         }
 
         if (other.CompareTag("PointClient1"))
@@ -52,6 +64,11 @@ public class AgentController : MonoBehaviour
             UIFormula.SetActive(true);
             bandera = false;
         }
+    }
+
+    void DesaparecerNotificacionCliente()
+    {
+        //notificacionCliente.SetActive(false);
     }
 }
 
