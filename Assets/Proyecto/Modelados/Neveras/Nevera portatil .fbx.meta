@@ -3,7 +3,12 @@ guid: 8621c166be4740f40bc75db200ef4699
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nevera Portatil
+    second: {fileID: 2100000, guid: e506a96ff265d914da8ecdf2c1eef474, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
