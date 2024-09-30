@@ -32,7 +32,7 @@ public class AgentController : MonoBehaviour
 
         if (calculateDrog.activarCaminandoAfuera)
         {
-            agent.destination = new Vector3(-7, 0, 6);
+            agent.destination = new Vector3(-5.5f, 0, 6);
         }
         else
         {
