@@ -33,6 +33,7 @@ public class CalculateCAP : MonoBehaviour
             /*ejercicioCorrecto = false;
             audioSourcePerson.Play();
             audioIncorrecto.SetActive(true);*/
+            //Prueba
             ejercicioCorrecto = true;
             audioCorrecto.SetActive(true);
         }
