@@ -19,12 +19,6 @@ public class ActiveEquation : MonoBehaviour
 
     public GameObject audioSource;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (PRInit.transform.position == PRFinish.transform.position) { PRState = true; }
