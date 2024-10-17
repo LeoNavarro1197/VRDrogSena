@@ -16,18 +16,6 @@ public class CalculateDrog : MonoBehaviour
 
     public GameObject inicioAlmacenamiento, UIFormula;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (controlGameplay.agent1 && other.CompareTag("CajaAdvil"))
