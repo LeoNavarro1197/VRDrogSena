@@ -10,7 +10,7 @@ public class ActiveEquation : MonoBehaviour
     public GameObject MultiplicatorInit, MultiplicatorFinish;
     public GameObject SubstractionInit, SubstractionFinish;
     public GameObject ExisInit, ExisFinish;
-    public GameObject videoAlphaNumerico;
+    public GameObject videoAlphaNumerico, videoFormula;
 
     bool PRState = false, CMPState = false, MultiplicatorState = false, SubstractionState = false, ExisState = false;
     public bool equationCorrect = false;
@@ -38,6 +38,7 @@ public class ActiveEquation : MonoBehaviour
             dragAndDrop.SetActive(false);
             alphaNumerico.SetActive(true);
             videoAlphaNumerico.SetActive(true);
+            videoFormula.SetActive(false);
         }
     }
 }

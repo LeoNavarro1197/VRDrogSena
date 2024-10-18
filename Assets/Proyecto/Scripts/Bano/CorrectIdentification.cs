@@ -22,6 +22,7 @@ public class CorrectIdentification : MonoBehaviour
     public bool equationCorrect = false;
 
     public GameObject audioSource;
+    public GameObject juegoBano, congratsBano;
 
     void Update()
     {
@@ -45,6 +46,8 @@ public class CorrectIdentification : MonoBehaviour
         if (equationCorrect)
         {
             audioSource.SetActive(true);
+            juegoBano.SetActive(false);
+            congratsBano.SetActive(true);
         }
     }
 }
