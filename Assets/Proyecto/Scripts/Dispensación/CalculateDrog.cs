@@ -7,11 +7,10 @@ public class CalculateDrog : MonoBehaviour
 {
     public ControlGameplay controlGameplay;
 
-    public Animator animator;
+    public Animator animator, animator2, animator3;
 
     public bool activarCaminandoAfuera = false;
 
-    public GameObject advil;
     public GameObject notidicacionAlmacenamiento;
 
     public GameObject inicioAlmacenamiento, UIFormula;
@@ -26,15 +25,29 @@ public class CalculateDrog : MonoBehaviour
             Invoke("DesaparecerObjeto", 1.08f);
             Invoke("StartIdle", 1.10f);
         }
+
+        if (controlGameplay.agent2 && other.CompareTag("CajaLantus"))
+        {
+            Debug.Log("Entró Lantus");
+            animator2.SetBool("tomar", true);
+            animator2.SetBool("idle", false);
+            Invoke("DesaparecerObjeto", 1.08f);
+            Invoke("StartIdle2", 1.10f);
+        }
+
+        if (controlGameplay.agent2 && other.CompareTag("CajaAlbendazul"))
+        {
+            Debug.Log("Entró Albendazul");
+            animator3.SetBool("tomar", true);
+            animator3.SetBool("idle", false);
+            Invoke("DesaparecerObjeto", 1.08f);
+            Invoke("StartIdle3", 1.10f);
+        }
+
         else
         {
             Debug.Log("Medicamento incorrecto");
         }
-    }
-
-    void DesaparecerObjeto()
-    {
-        advil.SetActive(false);
     }
 
     void StartIdle()
@@ -48,6 +61,38 @@ public class CalculateDrog : MonoBehaviour
     {
         animator.SetBool("caminando", true);
         animator.SetBool("idle", false);
+        activarCaminandoAfuera = true;
+        notidicacionAlmacenamiento.SetActive(true);
+        Invoke("DesaparecerNotificacionAlmacenamiento", 2);
+    }
+
+    void StartIdle2()
+    {
+        animator2.SetBool("idle", true);
+        animator2.SetBool("tomar", false);
+        Invoke("StartCaminando2", 1);
+    }
+
+    void StartCaminando2()
+    {
+        animator2.SetBool("caminando", true);
+        animator2.SetBool("idle", false);
+        activarCaminandoAfuera = true;
+        notidicacionAlmacenamiento.SetActive(true);
+        Invoke("DesaparecerNotificacionAlmacenamiento", 2);
+    }
+
+    void StartIdle3()
+    {
+        animator3.SetBool("idle", true);
+        animator3.SetBool("tomar", false);
+        Invoke("StartCaminando3", 1);
+    }
+
+    void StartCaminando3()
+    {
+        animator3.SetBool("caminando", true);
+        animator3.SetBool("idle", false);
         activarCaminandoAfuera = true;
         notidicacionAlmacenamiento.SetActive(true);
         Invoke("DesaparecerNotificacionAlmacenamiento", 2);

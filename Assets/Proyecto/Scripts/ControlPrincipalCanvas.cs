@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class ControlPrincipalCanvas : MonoBehaviour
 {
-    public GameObject principalCanvas;
+    public GameObject principalCanvas, colliderLavamanos;
 
     public void ActiveCanvas()
     {
         principalCanvas.SetActive(true);
+        Invoke("DesactivarCollider", 1);
+    }
+
+    void DesactivarCollider()
+    {
+        colliderLavamanos.SetActive(false);
     }
 }

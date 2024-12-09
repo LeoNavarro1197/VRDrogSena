@@ -11,27 +11,27 @@ public class ControlAlmacenamiento : MonoBehaviour
     {
         if (other.CompareTag(m1))
         {
-            Debug.Log("Almacenamiento Correcto");
+            //Debug.Log("Almacenamiento Correcto");
         }
         else if (other.CompareTag(m2))
         {
-            Debug.Log("Almacenamiento Correcto");
+            //Debug.Log("Almacenamiento Correcto");
         }
         else if (other.CompareTag(m3))
         {
-            Debug.Log("Almacenamiento Correcto");
+            //Debug.Log("Almacenamiento Correcto");
         }
         else if (other.CompareTag(m4))
         {
-            Debug.Log("Almacenamiento Correcto");
+            //Debug.Log("Almacenamiento Correcto");
         }
         else if (other.CompareTag(m5))
         {
-            Debug.Log("Almacenamiento Correcto");
+            //Debug.Log("Almacenamiento Correcto");
         }
         else
         {
-            Debug.Log("Almacenamiento Incorrecto");
+            //Debug.Log("Almacenamiento Incorrecto");
         }
     }
 }
