@@ -6,6 +6,7 @@ public class ControlGameplay : MonoBehaviour
 {
     public AlphaNumerico alphaNumerico;
     public GameObject Agent, Agent2, Agent3;
+    public GameObject canvasRecepcionAdministrativa, estiba, medicamentos, neveras;
     public bool agent1 = false, agent2 = false, agent3 = false, agent4 = false, agent5 = false;
     bool bandera = true;
 
@@ -22,6 +23,10 @@ public class ControlGameplay : MonoBehaviour
         {
             Invoke("InstanciarAgente", Random.Range(10, 15));
             bandera = false;
+            canvasRecepcionAdministrativa.SetActive(true);
+            estiba.SetActive(true);
+            medicamentos.SetActive(true);
+            neveras.SetActive(true);
         }
     }
 
