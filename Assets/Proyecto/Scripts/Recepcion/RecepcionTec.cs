@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RecepcionTec : MonoBehaviour
 {
-    public GameObject objectToggle, audioCorrecto;
+    public GameObject objectToggle, audioCorrecto, uiExcelente, uiRecepcionTecnica;
     public Transform uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once;
     public Toggle toggle1, toggle2, toggle3, toggle4;
     bool bandera = true;
@@ -37,6 +37,8 @@ public class RecepcionTec : MonoBehaviour
         {
             bandera = false;
             audioCorrecto.SetActive(true);
+            uiExcelente.SetActive(true);
+            uiRecepcionTecnica.SetActive(false);
         }
     }
 }
